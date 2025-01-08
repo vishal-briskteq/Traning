@@ -1,0 +1,76 @@
+.container{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(0, 0, 0);
+    position: relative;
+    
+}
+
+.container .items{
+    position: absolute;
+    /* overflow: auto; */
+    height: 200px;
+    width: 360px;
+    top: 30%;
+    left: calc(50% - 75px);
+    transform-style:preserve-3d ;
+    transform: perspective(1000px);
+    animation: autoRun 20s linear infinite;
+
+}
+
+@keyframes autoRun{
+    from{
+        transform: perspective(1000px) rotateX(0deg);
+    }
+    to{
+        transform: perspective(1000px) rotateX(360deg);
+    }
+}
+
+.container .items .img{
+    position: absolute;
+    inset: 0 0 0 0;
+    transform: 
+        rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+        translateZ(550px);
+
+}
+
+#img1{
+    background-color: hsl(4, 80%, 49%);
+}
+
+#img2{
+    background-color: hsl(54, 90%, 53%);
+}
+
+#img3{
+    background-color: hsl(106, 76%, 47%);
+}
+
+#img4{
+    background-color: hsl(155, 90%, 45%);
+}
+
+#img5{
+    background-color: hsl(224, 84%, 53%);
+}
+
+#img6{
+    background-color: hsl(280, 91%, 56%);
+}
+#img7{
+    background-color: hsl(280, 87%, 38%);
+}
+#img8{
+    background-color: hsl(332, 86%, 73%);
+}
+
+#img9{
+    background-color: hsl(337, 83%, 41%);
+}
+
+#img10{
+    background-color: hsl(0, 91%, 17%);
+}
