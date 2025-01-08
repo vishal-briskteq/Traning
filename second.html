@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .section{
+            text-align: center;
+            text-transform: uppercase;
+            align-content: center;
+        }
+        #head{
+            background-color:darkolivegreen;
+            min-height: 140px;
+        }
+        #lside{
+            background-color:tomato;
+            min-height: 330px;
+            min-width: 30%;
+            
+        }
+        #rside{         
+            min-width: 70%;
+                
+        }
+        #foot{
+            background-color: darkslateblue;
+            min-height: 140px;
+        }
+        #divide{
+            display: flex;
+            
+        }
+        #up{
+            background-color:steelblue;
+           
+            min-height: 165px;
+
+        }
+        #down{
+           
+            min-width: 70%;
+            display: flex;
+            /* flex-wrap: wrap; */
+
+        }
+        #one{
+            background-color: sandybrown;
+            min-height: 165px;
+            min-width: 50%;
+            flex-shrink: 2;
+        }
+        #two{
+            background-color:chartreuse;
+            min-height: 165px;
+            min-width: 50%;
+            flex-shrink: 2;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="section" id="head">Header</div>
+        <div class="section" id="divide">
+            <div class="section" id="lside">Sidebar</div>
+            <div class="section" id="rside">
+                <div class="section" id="up">Single</div>
+                <div class="section" id="down">
+                    <div class="section"  id="one"></div>
+                    <div class="section"  id="two"></div>
+                </div>
+            </div>
+        </div>
+    <div class="section" id="foot">Footer</div>
+</body>
+</html>

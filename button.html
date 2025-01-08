@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+        body{
+            cursor: url('balloon.png'), auto;
+        }
+        .container{
+            width: 100vw;
+            height: 100vh;
+            background-color: tomato;
+            position: relative;
+           
+        }
+        .unclickable{
+            padding: 12px;
+            border: 2px solid rgb(255, 0, 0);
+            color: red;
+            position: absolute;
+        }
+        .hidebutton{
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <button class="unclickable">CLICK ME</button>
+    </div>
+<script>
+   var container = document.querySelector('.container');
+   var button = document.querySelector('.unclickable');
+   
+   button.addEventListener('mouseover', () => {
+      // Get container dimensions
+      const containerRect = container.getBoundingClientRect();
+      const buttonWidth = button.offsetWidth;
+      const buttonHeight = button.offsetHeight;
+      console.log(containerRect);
+      console.log(buttonWidth);
+      console.log(buttonHeight)
+
+      // Calculate random positions ensuring the button stays inside the container
+      const randomX = Math.random() * (containerRect.width - buttonWidth);
+      const randomY = Math.random() * (containerRect.height - buttonHeight);
+      console.log(randomX);
+      console.log(randomY);
+      
+      // Set the button's new position
+      button.style.left = `${randomX}px`;
+      button.style.top = `${randomY}px`;
+    });
+</script>
+</body>
+</html>

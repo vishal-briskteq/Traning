@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .fly {
+            position: relative;
+            width: 25px;
+            left: 50%;
+            top: 120%;
+        }
+
+        .animate {
+            animation-name: udega;
+            animation-duration: 10s;
+            animation-timing-function: linear;
+        }
+
+        @keyframes udega {
+            from {
+                left: 50%;
+                top: 120%;
+            }
+            to {
+                left: 50%;
+                top: -10%;
+            }
+        }
+        #startButton{
+            text-align: center;
+            padding: 1rem;
+            background-color: skyblue;
+            border-color: blanchedalmond;
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="fly" id="animatedDiv">
+            <img src="balloon.png" style="width: 40px;" />
+        </div>
+        <button id="startButton">Click Me</button>
+    </div>
+    <script>
+        document.getElementById('startButton').addEventListener('click', function() {
+            const div = document.getElementById('animatedDiv'); // Correct ID
+            div.classList.add('animate'); // Add animation class
+        });
+    </script>
+</body>
+</html>
